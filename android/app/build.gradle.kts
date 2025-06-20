@@ -6,6 +6,7 @@ plugins {
 }
 
 android {
+
     namespace = "com.example.islami"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
@@ -41,4 +42,8 @@ android {
 
 flutter {
     source = "../.."
+}
+android {
+    ndkVersion = "27.0.12077973"
+
 }
