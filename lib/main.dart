@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:islami/provider/most%20recent%20provider.dart';
 import 'package:islami/ui/home/homescreen.dart';
 import 'package:islami/ui/home/tabs/quran-tab/suradetails.dart';
 import 'package:islami/uitles/App_Theme.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(create: (context)=>MostRecentProvider(),
+      child: MyApp())
+  );
 }
 
 
