@@ -97,21 +97,34 @@ class _QuranTabState extends State<QuranTab> {
        )
     );
   }
-
   void searchAboutList(String newText) {
-    List<int> filterSearch =[];
-    for(int i =0;i<QuranResources.englishQuranSurahs.length;i++){
-      if(QuranResources.englishQuranSurahs[i].toLowerCase().contains(newText.toLowerCase())){
-      filterSearch.add(i);
-      }
-      if(QuranResources.arabicQuranSuras[i].contains(newText)){
+    List<int> filterSearch = [];
+    for (int i = 0; i < QuranResources.englishQuranSurahs.length; i++) {
+      if (QuranResources.englishQuranSurahs[i].toLowerCase().contains(
+        newText.toLowerCase(),
+      ) ||
+          QuranResources.arabicQuranSuras[i].contains(newText)) {
         filterSearch.add(i);
       }
     }
     filterList = filterSearch;
-    setState(() {
-
-    });
-
+    setState((){});
   }
+//
+//   void searchAboutList(String newText) {
+//     List<int> filterSearch =[];
+//     for(int i =0;i<QuranResources.englishQuranSurahs.length;i++){
+//       if(QuranResources.englishQuranSurahs[i].toLowerCase().contains(newText.toLowerCase())){
+//       filterSearch.add(i);
+//       }
+//       if(QuranResources.arabicQuranSuras[i].contains(newText)){
+//         filterSearch.add(i);
+//       }
+//     }
+//     filterList = filterSearch;
+//     setState(() {
+//
+//     });
+//
+//   }
 }
