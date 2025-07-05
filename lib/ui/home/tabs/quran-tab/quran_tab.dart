@@ -63,7 +63,7 @@ class _QuranTabState extends State<QuranTab> {
                )
            ),
            SizedBox(height: height*0.02,),
-          MostRecentWidget(),
+            MostRecentWidget(),
            SizedBox(height: height*0.01,),
            Text('suras name',
            style: TextStyle(
