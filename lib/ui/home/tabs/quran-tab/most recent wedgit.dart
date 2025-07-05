@@ -38,63 +38,59 @@ late MostRecentProvider mostrecentprovider ;
     mostrecentprovider=Provider.of<MostRecentProvider>(context);
 
     //todo this is show last sura if he didn't this no  widget can't be show (visibility)
-    return Visibility(
-      visible: mostrecentprovider.mostRecent.isEmpty,
-      child:
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text('most recent',
-            style: TextStyle(
-              color: AppColors.whiteColor,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('most recent',
+          style: TextStyle(
+            color: AppColors.whiteColor,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
           ),
-          SizedBox(height: height*0.02,),
-          SizedBox(
-              height: height*0.35,
-              width: double.infinity,
-              child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: AppColors.primaryColor,
-                      ),
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(3),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(QuranResources.englishQuranSurahs[mostrecentprovider.mostRecent[index]],
-                                  style:AppTextStyle.bold24Black),
-                                Text(QuranResources.arabicQuranSuras[mostrecentprovider.mostRecent[index]],
-                                  style: AppTextStyle.bold24Black),
-                                Text('${QuranResources.AyaNumber[mostrecentprovider.mostRecent[index]]} verses',
-                                  style: AppTextStyle.bold16black),
-                              ],
-                            ),
+        ),
+        SizedBox(height: height*0.02,),
+        SizedBox(
+            height: height*0.35,
+            width: double.infinity,
+            child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: AppColors.primaryColor,
+                    ),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(3),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(QuranResources.englishQuranSurahs[mostrecentprovider.mostRecent[index]],
+                                style:AppTextStyle.bold24Black),
+                              Text(QuranResources.arabicQuranSuras[mostrecentprovider.mostRecent[index]],
+                                style: AppTextStyle.bold24Black),
+                              Text('${QuranResources.AyaNumber[mostrecentprovider.mostRecent[index]]} verses',
+                                style: AppTextStyle.bold16black),
+                            ],
                           ),
-                          Image.asset(AppAssets.logoMostRecent),
-                        ],
-                      ),
-                    );
-                  },
-                  separatorBuilder: (context, index) {
-                    return SizedBox(width: width*0.02,);
-                  },
-                  itemCount: mostrecentprovider.mostRecent.length),
-            ),
+                        ),
+                        Image.asset(AppAssets.logoMostRecent),
+                      ],
+                    ),
+                  );
+                },
+                separatorBuilder: (context, index) {
+                  return SizedBox(width: width*0.02,);
+                },
+                itemCount: mostrecentprovider.mostRecent.length),
+          ),
 
-          SizedBox(height: height*0.02,),
-        ],
-      )
-     );
+        SizedBox(height: height*0.02,),
+      ],
+    );
   }
 
 

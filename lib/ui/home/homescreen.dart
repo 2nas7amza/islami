@@ -30,51 +30,54 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
 
-    return Stack(
-      children:  [
-        Image.asset(backGround[selectedIndex],
-        width: double.infinity,
-        height: double.infinity,
-        fit: BoxFit.fill,),
-        Scaffold(
+    return SafeArea(
 
-        bottomNavigationBar:Theme(data: Theme.of(context).copyWith(
-          canvasColor: AppColors.primaryColor
-        ),
-
-            child: BottomNavigationBar(
-             currentIndex: selectedIndex,
-          onTap: (index){
-           selectedIndex =index;
-            setState(() {
-
-            });
-
-
-              },
-              items:[
-                BottomNavigationBarItem(icon: buildBNB(index: 0, imageName: AppAssets.quranIcon),label: 'quran' ),
-                BottomNavigationBarItem(icon: buildBNB(index: 1, imageName: AppAssets.hadithIcon),label: 'hadith' ),
-                BottomNavigationBarItem(icon: buildBNB(index: 2, imageName: AppAssets.sebhaIcon),label: 'sebha' ),
-                BottomNavigationBarItem(icon: buildBNB(index: 3, imageName: AppAssets.radioIcon),label: 'radio' ),
-                BottomNavigationBarItem(icon: buildBNB(index: 4, imageName: AppAssets.azanIcon),label: 'azan' ),
-
-              ],backgroundColor:AppColors.primaryColor ,
-              type: BottomNavigationBarType.fixed,
-              selectedItemColor: AppColors.whiteColor,
-              unselectedItemColor: AppColors.blackColor,
-
-            ),),
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset(AppAssets.logo),
-              Expanded(child:tabs[selectedIndex] )
-            ],
+      child: Stack(
+        children:  [
+          Image.asset(backGround[selectedIndex],
+          width: double.infinity,
+          height: double.infinity,
+          fit: BoxFit.fill,),
+          Scaffold(
+      
+          bottomNavigationBar:Theme(data: Theme.of(context).copyWith(
+            canvasColor: AppColors.primaryColor
           ),
-
-        )
-      ],
+      
+              child: BottomNavigationBar(
+               currentIndex: selectedIndex,
+            onTap: (index){
+             selectedIndex =index;
+              setState(() {
+      
+              });
+      
+      
+                },
+                items:[
+                  BottomNavigationBarItem(icon: buildBNB(index: 0, imageName: AppAssets.quranIcon),label: 'quran' ),
+                  BottomNavigationBarItem(icon: buildBNB(index: 1, imageName: AppAssets.hadithIcon),label: 'hadith' ),
+                  BottomNavigationBarItem(icon: buildBNB(index: 2, imageName: AppAssets.sebhaIcon),label: 'sebha' ),
+                  BottomNavigationBarItem(icon: buildBNB(index: 3, imageName: AppAssets.radioIcon),label: 'radio' ),
+                  BottomNavigationBarItem(icon: buildBNB(index: 4, imageName: AppAssets.azanIcon),label: 'azan' ),
+      
+                ],backgroundColor:AppColors.primaryColor ,
+                type: BottomNavigationBarType.fixed,
+                selectedItemColor: AppColors.whiteColor,
+                unselectedItemColor: AppColors.blackColor,
+      
+              ),),
+            body: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset(AppAssets.logo),
+                Expanded(child:tabs[selectedIndex] )
+              ],
+            ),
+      
+          )
+        ],
+      ),
     );
   }
   Widget buildBNB({required int index,required String imageName}){

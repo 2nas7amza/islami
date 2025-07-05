@@ -13,6 +13,11 @@ class AppAssets{
   static const String logoMostRecent = 'assets/images/Rectangle 124.png';
   static const String suraBackGround = 'assets/images/sura background.png';
   static const String hadithBackGround = 'assets/images/hadith background.png';
+  static const String radioStationGround = 'assets/images/Mosque-02.png';
+  static const String evinigAzkar ='assets/images/evinigAzkar.png';
+  static const String morningAzkar ='assets/images/morningAzkar.png';
+  static const String sebhaCounter ='assets/images/sebha counter.png';
+
 
 
 }
